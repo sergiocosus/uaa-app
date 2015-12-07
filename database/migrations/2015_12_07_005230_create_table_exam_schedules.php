@@ -12,15 +12,19 @@ class CreateTableExamSchedules extends Migration
      */
     public function up()
     {
-        Schema::create('exam schedules', function (Blueprint $table) {
+        Schema::create('exam_schedules', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('subject_id',false,true);
             $table->integer('user_id',false,true);
             $table->string('description');
             $table->dateTime('date_time');
+            $table->decimal('duration');
 
-            $table->foreign('subject_id','exam_schedules_subject_id_foreign' )->references('id')->on('subjects');
-            $table->foreign('user_id','exam_schedules_user_id_foreign')->references('id')->on('users');
+            $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -31,8 +35,6 @@ class CreateTableExamSchedules extends Migration
      */
     public function down()
     {
-        Schema::table('exam schedules', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('exam_schedules');
     }
 }
