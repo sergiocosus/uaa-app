@@ -18,7 +18,7 @@ class ExamScheduleController extends Controller
 
     public function index()
     {
-        return \Auth::user()->examSchedules()->with('');
+        return \Auth::user()->examSchedules();
     }
 
 }
