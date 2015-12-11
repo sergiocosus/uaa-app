@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/building', 'BuildingController@index');
 Route::get('/exam-schedule', 'ExamScheduleController@index');
-Route::get('/user', 'ExamScheduleController@index');
+Route::get('/user', 'UserController@getCurrent');
 Route::get('/schedule', 'ScheduleController@index');
 
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
