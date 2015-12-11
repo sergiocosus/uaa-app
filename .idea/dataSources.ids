@@ -15,200 +15,383 @@
       <table id="6" parent="1" name="schedules"/>
       <table id="7" parent="1" name="subjects"/>
       <table id="8" parent="1" name="users"/>
-      <column id="9" parent="2" name="id">
+      <table id="9" parent="1" name="offers"/>
+      <column id="10" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="10" parent="2" name="name">
+      <column id="11" parent="2" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="11" parent="2" name="latitude">
+      <column id="12" parent="2" name="latitude">
         <mandatory>1</mandatory>
         <data-type>double</data-type>
       </column>
-      <column id="12" parent="2" name="longitude">
+      <column id="13" parent="2" name="longitude">
         <mandatory>1</mandatory>
         <data-type>double</data-type>
       </column>
-      <column id="13" parent="2" name="created_at">
+      <column id="14" parent="2" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="14" parent="2" name="updated_at">
+      <column id="15" parent="2" name="updated_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="15" parent="2" name="deleted_at">
+      <column id="16" parent="2" name="deleted_at">
         <data-type>timestamp</data-type>
       </column>
-      <key id="16" parent="2" name="PRIMARY">
+      <key id="17" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="17" parent="3" name="id">
+      <column id="18" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="18" parent="3" name="subject_id">
+      <column id="19" parent="3" name="subject_id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="19" parent="3" name="user_id">
+      <column id="20" parent="3" name="user_id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="20" parent="3" name="description">
+      <column id="21" parent="3" name="description">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="21" parent="3" name="date_time">
+      <column id="22" parent="3" name="date_time">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
       </column>
-      <key id="22" parent="3" name="PRIMARY">
+      <column id="23" parent="3" name="duration">
+        <mandatory>1</mandatory>
+        <data-type>decimal(8,2)</data-type>
+      </column>
+      <column id="24" parent="3" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="25" parent="3" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="26" parent="3" name="deleted_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <key id="27" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="23" parent="3" name="exam_schedules_subject_id_foreign">
+      <foreign-key id="28" parent="3" name="exam_schedules_subject_id_foreign">
         <columns>subject_id</columns>
         <ref-key>subjects.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="24" parent="3" name="exam_schedules_user_id_foreign">
+      <foreign-key id="29" parent="3" name="exam_schedules_user_id_foreign">
         <columns>user_id</columns>
         <ref-key>users.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="25" parent="4" name="migration">
+      <column id="30" parent="4" name="migration">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="26" parent="4" name="batch">
+      <column id="31" parent="4" name="batch">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="27" parent="5" name="email">
+      <column id="32" parent="5" name="email">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="28" parent="5" name="token">
+      <column id="33" parent="5" name="token">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="29" parent="5" name="created_at">
+      <column id="34" parent="5" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="30" parent="6" name="id">
+      <column id="35" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="31" parent="6" name="weekday">
+      <column id="36" parent="6" name="weekday">
         <mandatory>1</mandatory>
         <data-type>enum(&apos;Su&apos;, &apos;Mo&apos;, &apos;Tu&apos;, &apos;We&apos;, &apos;Th&apos;, &apos;Fr&apos;, &apos;Sa&apos;)</data-type>
       </column>
-      <column id="32" parent="6" name="subject_id">
+      <column id="37" parent="6" name="subject_id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="33" parent="6" name="user_id">
+      <column id="38" parent="6" name="user_id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="34" parent="6" name="time">
+      <column id="39" parent="6" name="time">
         <mandatory>1</mandatory>
         <data-type>time</data-type>
       </column>
-      <column id="35" parent="6" name="created_at">
+      <column id="40" parent="6" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="36" parent="6" name="updated_at">
+      <column id="41" parent="6" name="updated_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="37" parent="6" name="deleted_at">
+      <column id="42" parent="6" name="deleted_at">
         <data-type>timestamp</data-type>
       </column>
-      <key id="38" parent="6" name="PRIMARY">
+      <key id="43" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="39" parent="6" name="schedules_subject_id_foreign">
+      <foreign-key id="44" parent="6" name="schedules_subject_id_foreign">
         <columns>subject_id</columns>
         <ref-key>subjects.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="40" parent="6" name="schedules_user_id_foreign">
+      <foreign-key id="45" parent="6" name="schedules_user_id_foreign">
         <columns>user_id</columns>
         <ref-key>users.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="41" parent="7" name="id">
+      <column id="46" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="42" parent="7" name="name">
+      <column id="47" parent="7" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="43" parent="7" name="created_at">
+      <column id="48" parent="7" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="44" parent="7" name="updated_at">
+      <column id="49" parent="7" name="updated_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="45" parent="7" name="deleted_at">
+      <column id="50" parent="7" name="deleted_at">
         <data-type>timestamp</data-type>
       </column>
-      <key id="46" parent="7" name="PRIMARY">
+      <key id="51" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="47" parent="8" name="id">
+      <column id="52" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>int(10) unsigned</data-type>
       </column>
-      <column id="48" parent="8" name="name">
+      <column id="53" parent="8" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="49" parent="8" name="last_name">
+      <column id="54" parent="8" name="last_name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="50" parent="8" name="password">
+      <column id="55" parent="8" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(60)</data-type>
       </column>
-      <column id="51" parent="8" name="remember_token">
+      <column id="56" parent="8" name="remember_token">
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="52" parent="8" name="created_at">
+      <column id="57" parent="8" name="created_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <column id="53" parent="8" name="updated_at">
+      <column id="58" parent="8" name="updated_at">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
         <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
-      <key id="54" parent="8" name="PRIMARY">
+      <column id="59" parent="8" name="deleted_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <key id="60" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="61" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="62" parent="9" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="63" parent="9" name="educative_center">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="64" parent="9" name="campus">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="65" parent="9" name="url">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="66" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - fabian@localhost" uuid="66abdc49-7649-4fe8-9870-d97364ffe592">
+    <database-info product="MySQL" version="5.6.27-0ubuntu1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="fabian"/>
+      <table id="2" parent="1" name="calendario_academico_examenes"/>
+      <table id="3" parent="1" name="historia"/>
+      <table id="4" parent="1" name="horario"/>
+      <table id="5" parent="1" name="mapa"/>
+      <table id="6" parent="1" name="oferta"/>
+      <table id="7" parent="1" name="usuario"/>
+      <column id="8" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="9" parent="2" name="fechaInicio">
+        <comment>0000-00-00 00:00:00</comment>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="10" parent="2" name="fechaFin">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
+      </column>
+      <column id="11" parent="2" name="nombre">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="12" parent="2" name="esExamen">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="13" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="14" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="3" name="fecha">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="16" parent="3" name="lugar">
+        <data-type>varchar(254)</data-type>
+      </column>
+      <column id="17" parent="3" name="descripcion">
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="18" parent="3" name="esHistoria">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="19" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="20" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="4" name="Materia">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="22" parent="4" name="hora">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="23" parent="4" name="idAlumno">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="24" parent="4" name="dia">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="25" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="26" parent="4" name="horario_ibfk_1">
+        <columns>idAlumno</columns>
+        <ref-key>usuario.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="27" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="28" parent="5" name="name">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="29" parent="5" name="latitude">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="30" parent="5" name="longitude">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <key id="31" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="32" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="33" parent="6" name="nombre">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="34" parent="6" name="centro">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="35" parent="6" name="urlPDF">
+        <data-type>varchar(254)</data-type>
+      </column>
+      <column id="36" parent="6" name="campusSur">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="37" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="38" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="39" parent="7" name="pass">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="40" parent="7" name="nombre">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <key id="41" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

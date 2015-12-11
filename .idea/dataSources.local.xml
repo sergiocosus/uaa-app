@@ -7,5 +7,11 @@
       <schema-pattern>uaa_app.*</schema-pattern>
       <default-schemas>uaa_app.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - fabian@localhost" uuid="66abdc49-7649-4fe8-9870-d97364ffe592">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>fabian.*</schema-pattern>
+      <default-schemas>fabian.*</default-schemas>
+    </data-source>
   </component>
 </project>
