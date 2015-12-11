@@ -20,4 +20,7 @@ Route::get('/exam-schedule', 'ExamScheduleController@index');
 Route::get('/user', 'ExamScheduleController@index');
 Route::get('/schedule', 'ScheduleController@index');
 
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout');
+
 

@@ -15,3 +15,4 @@ class BuildingController extends Controller
         return Building::all();
     }
 }
+
