@@ -20,6 +20,7 @@ Route::get('/exam-schedule', 'ExamScheduleController@index');
 Route::get('/user', 'UserController@getCurrent');
 Route::get('/schedule', 'ScheduleController@index');
 Route::get('/offer', 'OfferController@index');
+Route::get('/academic-calendar', 'AcademicCalendarController@index');
 
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
 Route::get('/auth/logout', 'Auth\AuthController@getLogout');

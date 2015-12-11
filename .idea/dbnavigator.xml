@@ -23,11 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="35c62809-9ab0-4c21-bf0c-5f836758f196">
-        <schema name="fabian" object-types="column, constraint, function, index, procedure, table, trigger, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="35c62809-9ab0-4c21-bf0c-5f836758f196">
